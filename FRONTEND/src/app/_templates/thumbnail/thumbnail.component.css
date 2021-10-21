@@ -1,0 +1,14 @@
+img {
+    border-radius: 10% 10% 0 0;
+    margin-bottom: 5px;
+    max-width: 500px;
+    max-height: 100%;
+}
+
+.thumbnail-container {
+    border-radius: 40px;
+    margin: 40px;
+    max-width: 500px;
+    
+}
+

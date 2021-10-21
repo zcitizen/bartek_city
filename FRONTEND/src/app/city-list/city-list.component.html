@@ -1,0 +1,51 @@
+<div class="container-fluid text-center">
+    <div class="row py-3">
+        <div class="col-4 offset-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><button class="page-link" [disabled]="currentPage==1" (click)="previousPage()">&lt;</button></li>&nbsp;
+                    <input class="form-control page-counter" [(ngModel)]="currentPage" min="1" disabled> <span style="align-self: center;">&nbsp;of&nbsp;</span> 
+                    <input  class="form-control page-counter" [(ngModel)]="maxPageNumber" disabled>&nbsp;
+                    <li class="page-item"><button class="page-link" [disabled]="currentPage==maxPageNumber" (click)="nextPage()">&gt;</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-4 offset-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <label for="pageSizeTop">Page size: </label>
+                    <input id="pageSizeTop" class="form-control page-counter" [(ngModel)]="pageSize" (change)="getPagesForSize(pageSize)">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <ul class="list-unstyled">
+                <li *ngFor="let city of cityList">
+                    <app-thumbnail [id]="city.id" [name]="city.name" [image]="city.photo" [callbackFunction]="saveChangesCallback"></app-thumbnail>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><button class="page-link" [disabled]="currentPage==1" (click)="previousPage()">&lt;</button></li>&nbsp;
+                    <input class="form-control page-counter" [(ngModel)]="currentPage" min="1" disabled> <span style="align-self: center;">&nbsp;of&nbsp;</span> 
+                    <input  class="form-control page-counter" [(ngModel)]="maxPageNumber" disabled>&nbsp;
+                    <li class="page-item"><button class="page-link" [disabled]="currentPage==maxPageNumber" (click)="nextPage()">&gt;</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-4 offset-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <label for="pageSizeBottom">Page size: </label>
+                    <input id="pageSizeBottom" class="form-control page-counter" [(ngModel)]="pageSize" (change)="getPagesForSize(pageSize)">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

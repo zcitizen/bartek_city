@@ -1,0 +1,9 @@
+.page-counter {
+    width: fit-content;
+    max-width: 100px;
+    text-align: center;
+}
+
+.page-size{
+    text-align: -webkit-center;
+}

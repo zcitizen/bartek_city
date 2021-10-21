@@ -1,0 +1,26 @@
+    <div class="thumbnail-container border">
+        <div class="row justify-content-center">
+            <img [src]="image" alt="Here should be an iamge of a city">
+        </div>
+        <div class="subtitle-section py-2">
+            <div class="row justify-content-center subtitle-section">
+                <h3 *ngIf="!editMode">{{name}}</h3>
+                <div class="form-group" *ngIf="editMode">
+                    <input id="imageUrl" class="form-control" [(ngModel)]="nameCopy">
+                </div>
+            </div>
+        <div class="row justify-content-center" *ngIf="editMode">
+            <div class="form-group">
+                <label for="imageUrl">Image URL:</label>
+                <input id="imageUrl" class="form-control" [(ngModel)]="imageCopy">
+            </div>
+        </div>
+        <div class="row justify-content-center py-2">
+            <button class="btn btn-outline-info" *ngIf="!editMode" (click)="edit()">Edit</button>
+            <div class="btn-group">
+                <button class="btn btn-primary" *ngIf="editMode" (click)="save()">Save changes</button>
+                <button class="btn btn-danger" *ngIf="editMode" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    </div>
